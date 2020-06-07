@@ -1,0 +1,7 @@
+@media (max-width: 1100px) {
+    
+    #page-home main .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
