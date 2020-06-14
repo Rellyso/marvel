@@ -18,6 +18,16 @@ body {
 a {
     text-decoration: none;
     color: black;
+
+    font-weight: bold;
+}
+
+input, button, select {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* .content::after {
@@ -46,8 +56,7 @@ a {
     align-items: center;
 }
 
-
-#page-home header {
+.content header {
     width: 100%;
     max-width: 1100px;
     display: flex;
@@ -58,79 +67,7 @@ a {
 
 }
 
-#page-home header .logo {
+.content header .logo {
     width: 150px;
     box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.082);
 }
-
-#page-home header form {
-    display: flex;
-    align-items: center;
-}
-
-#page-home header input {
-    border-radius: 8px 0 0 8px;
-    padding: 16px 24px;
-    border: none;
-    height: 50px;
-}
-
-#page-home header button {
-    background-color: var(--primary-color);
-
-    border: none;
-    border-radius: 0 8px 8px 0;
-
-    width: 42px;
-    height: 50px;
-
-}
-
-#page-home main {
-    width: 100%;
-    max-width: 1100px;
-
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-
-    margin: 48px 24px 0 24px;
-
-}
-
-#page-home main .cards {
-    
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    gap: 12px;
-
-    overflow: hidden;
-}
-
-#page-home main .card {
-    background-color: white;
-
-    border-radius: 8px;
-
-    margin-bottom: 42px;
-
-    text-align: center;
-    text-transform: uppercase;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-
-#page-home main .card img {
-    width: 100%;
-}
-
-#page-home main .card h4 {
-    font-weight: bolder;
-    color: var(--primary-color);
-}
-

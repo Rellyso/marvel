@@ -1,101 +1,79 @@
 <!doctype html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Meu Herói Marvel</title>
 
-  <title>Meu Herói Marvel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/page-home.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;500;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="/styles/main.css">
-  <link rel="stylesheet" href="/styles/heroes.css">
-  <link rel="stylesheet" href="/styles/responsive.css">
+  </head>
 
-</head>
+  <body>
 
-<body>
+    <div class="content" id="page-home">
 
+      <header>
+        <img class="logo" src="assets/img/marvel-meu-hero.png" alt="Meu herói Marvel">
 
-  <div class="content" id="page-home">
+        <form action="search-results.html" method="GET" id="heroSearch">
+          <input type="text" name="search" placeholder="Pesquise heróis" id="search">
+          <button type="submit">
+            <img src="assets/search.svg" alt="Procurar por heróis">
+          </button>
+        </form>
+      </header>
 
-    <header>
-      <img class="logo" src="assets/img/marvel-meu-hero.png" alt="Meu herói Marvel">
+      <main>
 
-      <form action="search-results.html">
-        <input type="text" name="search" placeholder="Pesquise heróis">
-        <button>
-          <img src="assets/search.svg" alt="Procurar por heróis">
-        </button>
-      </form>
-    </header>
+        <div class="header">
+          <a href="#search" class="button">
+            <h1>Encontre o seu herói</h1>
+          </a>
+        </div>
+        <div class="presentation">
+          <h2>Busque por seu herói predileto.</h2>
+        </div>
 
-    <main>
-      <div class="cards">
+      </main>
 
-        <!--
-                <a href="" class="card">
-                <img src="/assets/img/imagem-modelo.jpg" alt="">
-                <h2>Nome do Herói</h2>
-                <h4>Clique para mostrar detalhes</h4>
-            </a>
-          -->
+      <div class="modal">
 
+        <div class="modal-content">
+          <hgroup>
+            <h2>Pesquisa por nome</h2> 
+            <span>Fechar</span>
+          </hgroup>
+          
+  
+          <fieldset>
+            <legend>
+              Digite o nome do herói
+            </legend>
+  
+            <form action="search-results.html" method="GET">
+  
+              <input type="text" name="search" id="search" placeholder="Iron Man, Hulk...">
+  
+              <button type="submit">
+                Pesquisar
+              </button>
+  
+            </form>
+          </fieldset>
+        </div>
+        
       </div>
-    </main>
 
-  </div>
+    </div>
 
+    <script src="/scripts/home.js"></script>
 
-
-  <script>
-    const timeStamp = '1591532812'
-    const apiKey = 'f3e1e4ea5b5da46782848ef6efadc4e3'
-    const md5 = '9fa9cb74b92d0af6d363ca1c515041a2'
-
-    fetch(`http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&limit=100`)
-      .then((res) => {
-        return res.json()
-      }).then((jsonParsed) => {
-        const divHero = document.querySelector('.cards')
-        console.log(jsonParsed)
-        jsonParsed.data.results.forEach(element => {
-          const srcImage = element.thumbnail.path + '.' + element.thumbnail.extension
-          const nameHero = element.name
-
-
-          createDivHero(srcImage, divHero, nameHero)
-        })
-
-        console.log(jsonParsed)
-      })
-
-    function createDivHero(imageHero, divToAppend, nameHero) {
-      const divPai = document.createElement('a')
-      const divImagem = document.createElement('div')
-      const divTexto = document.createElement('div')
-      const img = document.createElement('img')
-      const textName = document.createElement('h2')
-      const description = document.createElement('h4')
-
-      textName.textContent = nameHero
-      img.src = imageHero
-
-      divImagem.appendChild(img)
-      divPai.appendChild(divImagem)
-      divPai.appendChild(divTexto)
-      divTexto.appendChild(textName)
-      divTexto.appendChild(description)
-      divToAppend.appendChild(divPai)
-      divPai.classList.add('card')
-      description.innerText = `Clique para mostrar detalhes de ${nameHero}`
-
-    }
-
-  </script>
-</body>
+  </body>
 
 </html>
