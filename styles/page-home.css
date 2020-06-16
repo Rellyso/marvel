@@ -198,7 +198,7 @@
     transition: all .4s;
 }
 
-#page-home .modal input:focus {
+#page-home .modal input:hover {
     width: 500px;
 }
 

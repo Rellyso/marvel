@@ -5,14 +5,6 @@ var x = document.querySelector('.modal-content span')
 btn.onclick = toggleModal
 x.onclick = toggleModal
 
-function toggleModal() {
-    modal.classList.toggle('active')
-}
-
-function closeModal() {
-    modal.classList.remove('active')
-}
-
 document.onkeydown = function(evt) {
     evt = evt || window.event
     var isEscape = false
@@ -24,4 +16,12 @@ document.onkeydown = function(evt) {
     if (isEscape) {
         closeModal()
     }
+}
+
+function toggleModal() {
+    modal.classList.toggle('active')
+}
+
+function closeModal() {
+    modal.classList.remove('active')
 }

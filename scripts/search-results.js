@@ -10,34 +10,41 @@ if (queryParameterName !== null && queryParameterName !== "") {
     document.querySelector
 }
 
-fetch(`http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&limit=100`)
+fetch(`http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}&limit=100`) //
     .then((res) => {
         return res.json()
     }).then((jsonParsed) => {
         const divHero = document.querySelector('.cards')
+        const getSearch = (window.location.search.split('=')[1]).toLowerCase()
 
-        
         // selectHero(nameHero)
 
         jsonParsed.data.results.forEach(element => {
             const srcImage = element.thumbnail.path + '.' + element.thumbnail.extension
-            const nameHero = element.name
+            const nameHero = (element.name).toLowerCase()
             const idHero = element.id
 
 
-            
-            
-            createDivHero(srcImage, divHero, nameHero, idHero)
+            // pegar resposta do search
+
+            // filtrar resposta na api
+            // se o nome for igual ao nome digitado na url
+            if (nameHero.match(getSearch)) {
+                console.log('funcionando')
+                // criar e mostrar resultado
+                createDivHero(srcImage, divHero, nameHero, idHero)
+            }
+
+
+
+
+
         })
 
         console.log(jsonParsed)
     })
 
-// function selectHero(nameHero) {
-//     if (nameHero == searchResult) {
-//         nameHero
-//     }
-// }
+
 
 function createDivHero(imageHero, divToAppend, nameHero, idHero) {
     const divPai = document.createElement('div')
@@ -64,7 +71,3 @@ function createDivHero(imageHero, divToAppend, nameHero, idHero) {
     description.innerHTML = `Clique para mostrar detalhes de <a href="detalhes.html">${nameHero}</a>`
 
 }
-
-
-
-

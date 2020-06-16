@@ -1,3 +1,9 @@
+#search-results {
+    background-image: url('../assets/img/undraw_image_viewer_wxce.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
 #search-results header a {
     display: flex;
     align-items: center;
