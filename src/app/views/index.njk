@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Meu Herói Marvel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/page-home.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+
+  </head>
+
+  <body>
+
+    <div class="content" id="page-home">
+
+      <header>
+        <img class="logo" src="assets/img/marvel-meu-hero.png" alt="Meu herói Marvel">
+
+        <form action="search-results.html" method="GET" id="heroSearch">
+          <input type="text" name="search" placeholder="Pesquise heróis" id="search">
+          <button type="submit">
+            <img src="assets/search.svg" alt="Procurar por heróis">
+          </button>
+        </form>
+      </header>
+
+      <main>
+
+        <div class="header">
+          <a href="#search" class="button">
+            <h1>Encontre o seu herói</h1>
+          </a>
+        </div>
+        <div class="presentation">
+          <h2>Busque por seu herói predileto.</h2>
+        </div>
+
+      </main>
+
+      <div class="modal">
+
+        <div class="modal-content">
+          <hgroup>
+            <h2>Pesquisa por nome</h2> 
+            <span>Fechar</span>
+          </hgroup>
+          
+  
+          <fieldset>
+            <legend>
+              Digite o nome do herói
+            </legend>
+  
+            <form action="search-results.html" method="GET">
+  
+              <input type="text" name="search" id="search" placeholder="Iron Man, Hulk...">
+  
+              <button type="submit">
+                Pesquisar
+              </button>
+  
+            </form>
+          </fieldset>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <script src="/scripts/home.js"></script>
+
+  </body>
+
+</html>
