@@ -3,8 +3,9 @@
     background-repeat: no-repeat;
     background-position-x: 40vw;
     background-position-y: -10%;
-}
 
+    animation: slideUpBg ease 1s;
+}
 #page-home header form {
     display: flex;
     align-items: center;
@@ -29,6 +30,8 @@
     height: 50px;
 
     cursor: pointer;
+
+    animation: slideUpBg ease 1s;
 }
 
 #page-home main {
@@ -108,6 +111,27 @@
         border: 3px solid var(--primary-color);
     }
 }
+
+@keyframes slideUpBg {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        top: -80px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
 
 
 #page-home main .presentation h2 {
